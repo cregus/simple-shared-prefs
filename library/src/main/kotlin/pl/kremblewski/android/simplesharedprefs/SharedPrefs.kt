@@ -154,7 +154,7 @@ abstract class SharedPrefs(internal val sharedPreferences: SharedPreferences) {
     fun <T> mappedStringPreference(
         commit: Boolean = false,
         key: String? = null,
-        mapper: PreferenceMapper<T, String>
+        mapper: PreferenceMapper<T?, String?>
     ): ReadWriteProperty<SharedPrefs, T?> {
         return object : PrefsDelegate<T?>(commit, key, null) {
             override fun SharedPreferences.getValue(key: String, defaultValue: T?): T? {
@@ -224,7 +224,7 @@ abstract class SharedPrefs(internal val sharedPreferences: SharedPreferences) {
     fun <T> mappedStringSetPreference(
         commit: Boolean = false,
         key: String? = null,
-        mapper: PreferenceMapper<T, Set<String>>
+        mapper: PreferenceMapper<T?, Set<String>?>
     ): ReadWriteProperty<SharedPrefs, T?> {
         return object : PrefsDelegate<T?>(commit, key, null) {
             override fun SharedPreferences.getValue(key: String, defaultValue: T?): T? {
