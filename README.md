@@ -14,7 +14,7 @@ allprojects {
 ### Add library dependency to your project build file
 ```gradle
 dependencies {
-  implementation 'com.github.cregus:simple-shared-prefs:1.0.1'
+  implementation 'com.github.cregus:simple-shared-prefs:1.0.2'
 }
 ```
 
